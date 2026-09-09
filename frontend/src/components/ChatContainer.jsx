@@ -7,7 +7,7 @@ import MessageSkeleton from "./skeletons/MessageSkeleton"
 import { useAuthStore } from "../store/useAuthStore"
 import { formatMessageTime } from "../lib/utils"
 const ChatContainer = () => {
-    const { messages, getMessages, isMessagesLoading, selectedUser, subscribeToMessages, unsubscribeFromMessages } = useChatStore()
+    const { messages,newMessage, getMessages, isMessagesLoading, selectedUser, subscribeToMessages, unsubscribeFromMessages } = useChatStore()
   const { authUser } = useAuthStore()
   const messageEndRef= useRef(null)
   useEffect(() => {
@@ -19,7 +19,7 @@ const ChatContainer = () => {
     if (messageEndRef.current && messages) {
       messageEndRef.current.scrollIntoView({behavior:'smooth'})
     }
-  },[messages])
+  }, [messages])
   if (isMessagesLoading) {
     return (
     <div className="flex-1 flex flex-col overflow-auto">

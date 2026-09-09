@@ -42,6 +42,7 @@ export const sendMessage = async (req, res) => {
         const newMessage = new Message({
             senderId, receiverId, text, image:imageUrl
         })
+        console.log(newMessage, 'newmessage')
         await newMessage.save()
         const receiverSocketId = getReceiverSocketId(receiverId)
         if (receiverSocketId) {

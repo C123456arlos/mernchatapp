@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useAuthStore } from "../store/useAuthStore"
 import { Eye, EyeOff, Loader2, Lock, Mail, MessageSquare } from "lucide-react"
 import { Link } from "react-router-dom"
+import AuthImagePattern from "../components/AuthImagePattern"
 
 const LoginPage = () => {
     const [showPassword, setShowPassword] = useState(false)
@@ -41,7 +42,7 @@ const LoginPage = () => {
                               <input type='email' className={`input input-bordered w-full pl-10`}
                               placeholder='one@one.com' value={formData.email} onChange={(e)=>setFormData({...formData, email:e.target.value})}></input>
                           </div>
-                      </div>
+                        </div>
                       <div className='form-control'>
                           <label className='label'>
                               <span className='label-text font-medium'>password</span>
@@ -72,7 +73,8 @@ const LoginPage = () => {
                         </p>
                   </div>
               </div>
-          </div>
+            </div>
+            <AuthImagePattern title={'welcome back'} subtitle={'sign in to continue your conversations and catch up with your messages'}></AuthImagePattern>
     </div>
   )
 }

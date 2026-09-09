@@ -93,7 +93,7 @@ const SignUpPage = () => {
                   </div>
               </div>
           </div>
-          <AuthImagePattern title='join our community' text='connect with friends share moments and stay in touch with your loved ones'></AuthImagePattern>
+          <AuthImagePattern title='join our community' subtitle='connect with friends share moments and stay in touch with your loved ones'></AuthImagePattern>
       </div>
   )
 }
