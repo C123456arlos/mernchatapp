@@ -42,12 +42,13 @@ export const sendMessage = async (req, res) => {
         const newMessage = new Message({
             senderId, receiverId, text, image:imageUrl
         })
-        console.log(newMessage, 'newmessage')
         await newMessage.save()
+        console.log(newMessage, 'newMessage')
         const receiverSocketId = getReceiverSocketId(receiverId)
         if (receiverSocketId) {
+            // io.emit('newMessage', newMessage)
             io.to(receiverSocketId).emit('newMessage', newMessage)
-        }
+                    }
         res.status(201).json(newMessage)
     } catch (error) {
         console.log('error in sendMessage controller', error.message)

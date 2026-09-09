@@ -5,7 +5,7 @@ const MessageInput = () => {
     const [text, setText] = useState('')
     const [imagePreview, setImagePreview] = useState(null)
     const fileInputRef = useRef(null)
-    const { sendMessage } = useChatStore()
+    const { sendMessage ,  subscribeToMessages} = useChatStore()
     const handleImageChange = (e) => { 
         const file = e.target.files[0]
         if (!file.type.startsWith('image/')) {
